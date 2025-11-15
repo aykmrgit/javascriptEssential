@@ -5,8 +5,8 @@ const city = document.getElementById('city').value;
 const apiKey = '2a5c8a23a49071c67372e7b88deba3ce'; // Replace 'YOUR_API_KEY' with your actual API key
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 fetch(apiUrl)
-.then(response => response.json())
-.then(data => {
+    .then(response => response.json())
+    .then(data => {
     const weatherInfo = document.getElementById('weatherInfo');
     weatherInfo.innerHTML = `<h2>Weather in ${data.name}</h2>
                             <p>Temperature: ${data.main.temp} &#8451;</p>
@@ -17,5 +17,5 @@ fetch(apiUrl)
     const weatherInfo = document.getElementById('weatherInfo');
     weatherInfo.innerHTML = `<p>Failed to fetch weather. Please try again.</p>`;
 });
- document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );
 }
+document.getElementById('weatherForm').addEventListener('submit',showweatherDetails );
